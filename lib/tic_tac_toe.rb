@@ -137,7 +137,7 @@ class TicTacToe
     if won? != false 
       player_won == true 
     end
-    if player_won == true || draw? == true 
+    if won? != false || draw? == true 
       true 
     else 
       false 
