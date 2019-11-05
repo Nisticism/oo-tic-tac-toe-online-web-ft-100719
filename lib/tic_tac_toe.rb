@@ -84,6 +84,27 @@ class TicTacToe
     false
   end
   
+  def won_player
+    winning_combo = []
+    WIN_COMBINATIONS.each do |groups|
+      x_count = 0 
+      o_count = 0
+      groups.each do |indices|
+        if @board[indices] == "X"
+          x_count += 1 
+        elsif @board[indices] == "O" 
+          o_count += 1 
+        end 
+          
+        if x_count == 3 || o_count == 3 
+          winning_combo = groups 
+          return groups
+        end
+      end
+    end
+    false
+  end
+  
   def full?
     is_full = true
     @board.each do |index|
@@ -96,15 +117,16 @@ class TicTacToe
   
   def draw?
     player_won = false 
-    if won? != false && won?.size == 3
+    if won? != false
       player_won == true 
-    end
-    if player_won == true 
-      return false 
     end
     if player_won == false && full? == true 
       true
-    else
+    elsif player_won == true && full? == false 
+      false
+    elsif player_won == true && full? == true
+      false
+    else 
       false
     end
   end
