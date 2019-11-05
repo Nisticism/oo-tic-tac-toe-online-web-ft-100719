@@ -118,7 +118,7 @@ class TicTacToe
   
   def draw?
     player_won = false 
-    if won? != false
+    if player_won == "X" || player_won == "O"
       player_won == true 
     end
     if player_won == false && full? == true 
@@ -127,7 +127,7 @@ class TicTacToe
       false
     elsif player_won == true && full? == true
       false
-    else 
+    elsif player_won == false && full? == false
       false
     end
   end
