@@ -118,7 +118,7 @@ class TicTacToe
   
   def draw?
     player_won = false 
-    if player_won == "X" || player_won == "O"
+    if won_player == "X" || won_player == "O"
       player_won == true 
     end
     if player_won == false && full? == true 
@@ -169,7 +169,7 @@ class TicTacToe
       end
     end
     if won_player == "X" || won_player == "O"
-      puts "Congratulations, #{winner}!"
+      puts "Congratulations #{winner}!"
     else
       puts "Cat's Game!"
     end
