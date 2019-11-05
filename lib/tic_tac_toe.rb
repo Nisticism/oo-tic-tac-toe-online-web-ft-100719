@@ -96,9 +96,10 @@ class TicTacToe
           o_count += 1 
         end 
           
-        if x_count == 3 || o_count == 3 
-          winning_combo = groups 
-          return groups
+        if x_count == 3
+          return "X"
+        elsif o_count == 3 
+          return "O"
         end
       end
     end
@@ -144,8 +145,8 @@ class TicTacToe
   end
   
   def winner
-    if turn_count % 2 == 0 && over? == true
-      "O"
+    if won_player == "X"
+      "X"
     elsif turn_count % 2 == 1 && over? == true 
       "X"
     elsif draw? == true || over? == false
