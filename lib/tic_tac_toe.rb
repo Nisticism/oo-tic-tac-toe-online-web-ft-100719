@@ -163,8 +163,10 @@ class TicTacToe
     end
     
     player_won = false 
-    if won? != false 
-      player_won == true 
+    WIN_COMBINATIONS.each do |combo|
+      if won? == combo
+        player_won == true
+      end
     end
     if player_won == true 
       puts "Congratulations, #{winner}!"
