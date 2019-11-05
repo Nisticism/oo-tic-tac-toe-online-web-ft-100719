@@ -168,7 +168,7 @@ class TicTacToe
         player_won == true
       end
     end
-    if player_won == true 
+    if won_player == "X" || won_player == "O"
       puts "Congratulations, #{winner}!"
     else
       puts "Cat's Game!"
